@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion h-100" id="accordionSidebar">
+    <ul
+      class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion h-100"
+      id="accordionSidebar"
+    >
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -23,8 +26,7 @@
           <span>Dashboard</span>
         </Link>
       </li>
-     -->
-   
+      -->
 
       <!-- Divider -->
       <hr class="sidebar-divider" />
@@ -43,7 +45,7 @@
           aria-controls="collapseTwo"
         >
           <i class="fas fa-fw glyphicon fa-align-left"></i>
-          <span>Items</span>
+          <span>infrastructure</span>
         </a>
         <div
           id="collapseone"
@@ -56,8 +58,42 @@
             <Link :href="route('rooms.index')" class="collapse-item">
               <span>Rooms</span>
             </Link>
+            <Link :href="route('rooms.index')" class="collapse-item">
+              <span>Halls</span>
+            </Link>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav service - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseforth"
+          aria-expanded="true"
+          aria-controls="collapseTwo"
+        >
+          <i class="fa fa-hourglass"></i>
+          <span> Service</span>
+        </a>
+        <div
+          id="collapseforth"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Components:</h6>
+            <Link :href="route('booking.index')" class="collapse-item">
+              <span>Booking Rooms</span>
+            </Link>
+            <Link :href="route('assingroom.index')" class="collapse-item">
+              <span>Assign Rooms</span>
+            </Link>
             <Link :href="route('dashboard')" class="collapse-item">
-              <span>Table</span>
+              <span>Customers</span>
             </Link>
           </div>
         </div>
@@ -73,7 +109,7 @@
           aria-expanded="true"
           aria-controls="collapseTwo"
         >
-          <i class="fas fa-fw fa-carrot "></i>
+          <i class="fas fa-fw fa-carrot"></i>
           <span>Foods</span>
         </a>
         <div
@@ -84,7 +120,7 @@
         >
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Components:</h6>
-            <a class="collapse-item" href="#">Buttons</a>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -116,7 +152,6 @@
           </div>
         </div>
       </li>
-
     </ul>
     <!-- End of Sidebar -->
   </div>

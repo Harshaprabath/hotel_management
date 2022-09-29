@@ -21232,6 +21232,289 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../vendor/tightenco/ziggy/src/js */ "./vendor/tightenco/ziggy/src/js/index.js");
+/* harmony import */ var _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input.vue */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+_Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    AppLayoutVue: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetInput: _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  props: {
+    name: String,
+    rooms: Object,
+    availablerooms: Object,
+    usingrooms: Object
+  },
+  data: function data() {
+    return {
+      assignRoomform: (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__.useForm)({
+        roomid: "",
+        name: "",
+        noOfMembers: "",
+        mobile: "",
+        nic: ""
+      })
+    };
+  },
+  mounted: function mounted() {
+    var self = this;
+    $(document).ready(function () {
+      var table = $("#dataTable1").DataTable({});
+      table.ajax.reload();
+    });
+    $(document).ready(function () {
+      var table = $("#dataTable2").DataTable({});
+      table.ajax.reload();
+    });
+  },
+  methods: {
+    getRoom: function getRoom(room) {
+      console.log(room);
+      this.assignRoomform.roomid = room.id;
+    },
+    submit: function submit() {
+      var _this = this;
+
+      var modalToggle = document.getElementById("toggleMyModal");
+      console.log(this.addBookingform);
+      this.assignRoomform.post((0,_vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__["default"])("assingroom.store"), {
+        onSuccess: function onSuccess() {
+          _this.assignRoomform.reset();
+
+          sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+            position: "top-scroll-to-top",
+            icon: "success",
+            title: "Room has been Assign for Use ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        onError: function onError() {
+          sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+            position: "top-scroll-to-top",
+            icon: "error",
+            title: "error while assignning",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        onFinish: function onFinish() {
+          var modalToggle = document.getElementById("AssignRoomModal");
+          $("#AssignRoomModal").modal("hide");
+        }
+      });
+    },
+    out: function out(id) {
+      console.log(id);
+
+      try {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post((0,_vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__["default"])("assingroom.destroy", {
+          id: id
+        }));
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "success",
+          title: "Success",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } catch (err) {
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "error",
+          title: "error while removing",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../vendor/tightenco/ziggy/src/js */ "./vendor/tightenco/ziggy/src/js/index.js");
+/* harmony import */ var _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input.vue */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+_Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    AppLayoutVue: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetInput: _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  props: {
+    name: String,
+    rooms: Object,
+    availablerooms: Object,
+    bookedrooms: Object
+  },
+  data: function data() {
+    return {
+      addBookingform: (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__.useForm)({
+        roomid: "",
+        name: "",
+        noOfMembers: "",
+        mobile: "",
+        nic: ""
+      })
+    };
+  },
+  mounted: function mounted() {
+    var self = this;
+    $(document).ready(function () {
+      var table = $("#dataTable1").DataTable({});
+      table.ajax.reload();
+    });
+    $(document).ready(function () {
+      var table = $("#dataTable2").DataTable({});
+      table.ajax.reload();
+    });
+  },
+  methods: {
+    getRoom: function getRoom(room) {
+      console.log(room);
+      this.addBookingform.roomid = room.id;
+    },
+    submit: function submit() {
+      var _this = this;
+
+      var modalToggle = document.getElementById("toggleMyModal");
+      console.log(this.addBookingform);
+      this.addBookingform.post((0,_vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__["default"])("bokking.store"), {
+        onSuccess: function onSuccess() {
+          _this.addBookingform.reset();
+
+          sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+            position: "top-scroll-to-top",
+            icon: "success",
+            title: "Room has been Booked ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        onError: function onError() {
+          sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+            position: "top-scroll-to-top",
+            icon: "error",
+            title: "error while booking",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        onFinish: function onFinish() {
+          var modalToggle = document.getElementById("BookingModal");
+          $("#BookingModal").modal("hide");
+        }
+      });
+    },
+    moveToUse: function moveToUse(id) {
+      try {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post((0,_vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__["default"])("bokking.movetouse", {
+          id: id
+        }));
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "success",
+          title: "Room has been moved to Used",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } catch (err) {
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "error",
+          title: "error while moved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    },
+    removeBooking: function removeBooking(id) {
+      try {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post((0,_vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__["default"])("bokking.destroy", {
+          id: id
+        }));
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "success",
+          title: "Your room has been Removed",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } catch (err) {
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          position: "top-scroll-to-top",
+          icon: "error",
+          title: "error while removing",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=script&lang=js":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=script&lang=js ***!
@@ -21395,6 +21678,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     var self = this;
+    $(document).ready(function () {
+      var table = $("#dataTable").DataTable({
+        ajax: this.rooms
+      });
+      table.ajax.reload();
+    });
   },
   methods: {
     submit: function submit() {
@@ -21441,7 +21730,7 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default().fire({
           position: "top-scroll-to-top",
           icon: "error",
-          title: "error while editing",
+          title: "error while deleting",
           showConfirmButton: false,
           timer: 1500
         });
@@ -23227,7 +23516,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "aria-controls": "collapseTwo"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-fw glyphicon fa-align-left"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Items")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "infrastructure")], -1
 /* HOISTED */
 );
 
@@ -23251,18 +23540,63 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Table", -1
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Halls", -1
 /* HOISTED */
 );
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item\"><a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"true\" aria-controls=\"collapseTwo\"><i class=\"fas fa-fw fa-carrot\"></i><span>Foods</span></a><div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"><div class=\"bg-white py-2 collapse-inner rounded\"><h6 class=\"collapse-header\">Components:</h6><a class=\"collapse-item\" href=\"#\">Buttons</a><a class=\"collapse-item\" href=\"cards.html\">Cards</a></div></div></li>", 1);
+var _hoisted_13 = {
+  "class": "nav-item"
+};
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item\"><a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseTwo\"><i class=\"fas fa-fw fa-utensils\"></i><span>kitchen Items</span></a><div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"><div class=\"bg-white py-2 collapse-inner rounded\"><h6 class=\"collapse-header\">Components:</h6><a class=\"collapse-item\" href=\"buttons.html\">Buttons</a><a class=\"collapse-item\" href=\"cards.html\">Cards</a></div></div></li>", 1);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "nav-link collapsed",
+  href: "#",
+  "data-toggle": "collapse",
+  "data-target": "#collapseforth",
+  "aria-expanded": "true",
+  "aria-controls": "collapseTwo"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-hourglass"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Service")], -1
+/* HOISTED */
+);
+
+var _hoisted_15 = {
+  id: "collapseforth",
+  "class": "collapse",
+  "aria-labelledby": "headingTwo",
+  "data-parent": "#accordionSidebar"
+};
+var _hoisted_16 = {
+  "class": "bg-white py-2 collapse-inner rounded"
+};
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", {
+  "class": "collapse-header"
+}, "Components:", -1
+/* HOISTED */
+);
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Booking Rooms", -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Assign Rooms", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Customers", -1
+/* HOISTED */
+);
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item\"><a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"true\" aria-controls=\"collapseTwo\"><i class=\"fas fa-fw fa-carrot\"></i><span>Foods</span></a><div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"><div class=\"bg-white py-2 collapse-inner rounded\"><h6 class=\"collapse-header\">Components:</h6><a class=\"collapse-item\" href=\"buttons.html\">Buttons</a><a class=\"collapse-item\" href=\"cards.html\">Cards</a></div></div></li>", 1);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item\"><a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseTwo\"><i class=\"fas fa-fw fa-utensils\"></i><span>kitchen Items</span></a><div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\"><div class=\"bg-white py-2 collapse-inner rounded\"><h6 class=\"collapse-header\">Components:</h6><a class=\"collapse-item\" href=\"buttons.html\">Buttons</a><a class=\"collapse-item\" href=\"cards.html\">Cards</a></div></div></li>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar - Brand "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Divider "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Dashboard \r\n      <li class=\"nav-item active\">\r\n        <Link :href=\"route('dashboard')\" class=\"nav-link\">\r\n          <i class=\"fas fa-fw fa-tachometer-alt\"></i>\r\n          <span>Dashboard</span>\r\n        </Link>\r\n      </li>\r\n     "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Divider "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heading "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar - Brand "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Divider "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Dashboard \r\n      <li class=\"nav-item active\">\r\n        <Link :href=\"route('dashboard')\" class=\"nav-link\">\r\n          <i class=\"fas fa-fw fa-tachometer-alt\"></i>\r\n          <span>Dashboard</span>\r\n        </Link>\r\n      </li>\r\n      "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Divider "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heading "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('rooms.index'),
     "class": "collapse-item"
   }, {
@@ -23275,7 +23609,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: _ctx.route('dashboard'),
+    href: _ctx.route('rooms.index'),
     "class": "collapse-item"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -23286,7 +23620,43 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), _hoisted_14]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" End of Sidebar ")]);
+  , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav service - Pages Collapse Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('booking.index'),
+    "class": "collapse-item"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_18];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('assingroom.index'),
+    "class": "collapse-item"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_19];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('dashboard'),
+    "class": "collapse-item"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_20];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav Item - Pages Collapse Menu "), _hoisted_22]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" End of Sidebar ")]);
 }
 
 /***/ }),
@@ -25040,6 +25410,660 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0 ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "cards p-3 py-4 cards_custom"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "font-semibold text-xl text-gray-800 leading-tight"
+}, "Assign Rooms", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+  "class": "nav nav-tabs"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"active nav-item\"><a data-toggle=\"tab\" href=\"#home\">Home</a></li> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "data-toggle": "tab",
+  "class": "nav-link active",
+  href: "#menu1"
+}, "Available Rooms")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "data-toggle": "tab",
+  "class": "nav-link",
+  href: "#menu2"
+}, "Using Rooms")])], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
+  "class": "tab-content"
+};
+var _hoisted_7 = {
+  id: "menu1",
+  "class": "tab-pane fade active show in"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "table table-bordered",
+  id: "dataTable1",
+  width: "100%",
+  cellspacing: "0"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Room Number"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Price"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Assign Customers for Rooms")])], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = ["onClick"];
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  style: {
+    "color": "green"
+  }
+}, "Add Customer", -1
+/* HOISTED */
+);
+
+var _hoisted_13 = [_hoisted_12];
+var _hoisted_14 = {
+  "class": "modal fade",
+  id: "AssignRoomModal",
+  tabindex: "-1",
+  role: "dialog",
+  "aria-labelledby": "exampleModalCenterTitle",
+  "aria-hidden": "true"
+};
+var _hoisted_15 = {
+  "class": "modal-content"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "modal-title",
+  id: "exampleModalLongTitle"
+}, "Assign Customer"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "close",
+  "data-dismiss": "modal",
+  "aria-label": "Close"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "aria-hidden": "true"
+}, "×")])], -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "modal-body"
+};
+var _hoisted_18 = {
+  "class": "form-group row"
+};
+var _hoisted_19 = {
+  "class": "col-sm-6 mb-3 mb-sm-0"
+};
+var _hoisted_20 = {
+  "class": "col-sm-6"
+};
+var _hoisted_21 = {
+  "class": "form-group row"
+};
+var _hoisted_22 = {
+  "class": "col-sm-6 mb-3 mb-sm-0"
+};
+var _hoisted_23 = {
+  "class": "col-sm-6"
+};
+var _hoisted_24 = {
+  "class": "modal-footer"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-secondary",
+  "data-dismiss": "modal"
+}, "Close", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = ["disabled"];
+var _hoisted_27 = {
+  id: "menu2",
+  "class": "tab-pane fade"
+};
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "table table-bordered",
+  id: "dataTable2",
+  width: "100%",
+  cellspacing: "0"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Room Number"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Price"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Customer Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Started Date"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Action")])], -1
+/* HOISTED */
+);
+
+var _hoisted_31 = ["onClick"];
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  style: {
+    "color": "red"
+  }
+}, "Out", -1
+/* HOISTED */
+);
+
+var _hoisted_33 = [_hoisted_32];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_JetInput = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("JetInput");
+
+  var _component_AppLayoutVue = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("AppLayoutVue");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_AppLayoutVue, null, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, _hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu1"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.availablerooms, function (room) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+          key: room.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.number), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rs " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.price) + "/=", 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          "class": "btn btn-success",
+          "data-toggle": "modal",
+          "data-target": "#AssignRoomModal",
+          style: {
+            "margin-right": "4px",
+            "background-color": "white"
+          },
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.getRoom(room);
+          }, ["prevent"])
+        }, _hoisted_13, 8
+        /* PROPS */
+        , _hoisted_11)])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal add room for use "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+        "class": "modal-dialog modal-dialog-centered",
+        role: "document",
+        onClose: _cache[5] || (_cache[5] = function () {
+          return _ctx.closeModal && _ctx.closeModal.apply(_ctx, arguments);
+        })
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+        onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return $options.submit && $options.submit.apply($options, arguments);
+        }, ["prevent"]))
+      }, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "name",
+        modelValue: $data.assignRoomform.name,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+          return $data.assignRoomform.name = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "Customer Name",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "noOfMembers",
+        modelValue: $data.assignRoomform.noOfMembers,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+          return $data.assignRoomform.noOfMembers = $event;
+        }),
+        type: "number",
+        "class": "form-control form-control-user",
+        placeholder: "Number Of Member",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "mobile",
+        modelValue: $data.assignRoomform.mobile,
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $data.assignRoomform.mobile = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "Mobile",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "nic",
+        modelValue: $data.assignRoomform.nic,
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+          return $data.assignRoomform.nic = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "NIC",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>{{rm}}</p> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["btn btn-primary", {
+          'opacity-25': $data.assignRoomform.processing
+        }]),
+        disabled: $data.assignRoomform.processing
+      }, "Save", 10
+      /* CLASS, PROPS */
+      , _hoisted_26)])], 32
+      /* HYDRATE_EVENTS */
+      )])], 32
+      /* HYDRATE_EVENTS */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /Modal add room for using ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu1 end"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.usingrooms, function (room) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+          key: room.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.number), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rs " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.price) + "/=", 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.customer), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.createddate), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          "class": "btn btn-danger",
+          style: {
+            "background-color": "white"
+          },
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.out(room.id);
+          }, ["prevent"])
+        }, _hoisted_33, 8
+        /* PROPS */
+        , _hoisted_31)])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu2 end")])])];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40 ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "cards p-3 py-4 cards_custom"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "font-semibold text-xl text-gray-800 leading-tight"
+}, "Booking Rooms", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+  "class": "nav nav-tabs"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"active nav-item\"><a data-toggle=\"tab\" href=\"#home\">Home</a></li> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "data-toggle": "tab",
+  "class": "nav-link active",
+  href: "#menu1"
+}, "Available Rooms")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "data-toggle": "tab",
+  "class": "nav-link",
+  href: "#menu2"
+}, "Reserved Rooms")])], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
+  "class": "tab-content"
+};
+var _hoisted_7 = {
+  id: "menu1",
+  "class": "tab-pane fade active show in"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "table table-bordered",
+  id: "dataTable1",
+  width: "100%",
+  cellspacing: "0"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Room Number"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Price"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Assign Customers Booking")])], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = ["onClick"];
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  style: {
+    "color": "green"
+  }
+}, "Add Customer", -1
+/* HOISTED */
+);
+
+var _hoisted_13 = [_hoisted_12];
+var _hoisted_14 = {
+  "class": "modal fade",
+  id: "BookingModal",
+  tabindex: "-1",
+  role: "dialog",
+  "aria-labelledby": "exampleModalCenterTitle",
+  "aria-hidden": "true"
+};
+var _hoisted_15 = {
+  "class": "modal-content"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "modal-title",
+  id: "exampleModalLongTitle"
+}, "Assign Customer"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "close",
+  "data-dismiss": "modal",
+  "aria-label": "Close"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "aria-hidden": "true"
+}, "×")])], -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "modal-body"
+};
+var _hoisted_18 = {
+  "class": "form-group row"
+};
+var _hoisted_19 = {
+  "class": "col-sm-6 mb-3 mb-sm-0"
+};
+var _hoisted_20 = {
+  "class": "col-sm-6"
+};
+var _hoisted_21 = {
+  "class": "form-group row"
+};
+var _hoisted_22 = {
+  "class": "col-sm-6 mb-3 mb-sm-0"
+};
+var _hoisted_23 = {
+  "class": "col-sm-6"
+};
+var _hoisted_24 = {
+  "class": "modal-footer"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-secondary",
+  "data-dismiss": "modal"
+}, "Close", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = ["disabled"];
+var _hoisted_27 = {
+  id: "menu2",
+  "class": "tab-pane fade"
+};
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "table table-bordered",
+  id: "dataTable2",
+  width: "100%",
+  cellspacing: "0"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Room Number"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Price"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Customer Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Booking Date"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Action")])], -1
+/* HOISTED */
+);
+
+var _hoisted_31 = ["onClick"];
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  style: {
+    "color": "green"
+  }
+}, "Start Using ", -1
+/* HOISTED */
+);
+
+var _hoisted_33 = [_hoisted_32];
+var _hoisted_34 = ["onClick"];
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  style: {
+    "color": "red"
+  }
+}, "Release", -1
+/* HOISTED */
+);
+
+var _hoisted_36 = [_hoisted_35];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_JetInput = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("JetInput");
+
+  var _component_AppLayoutVue = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("AppLayoutVue");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_AppLayoutVue, null, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, _hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu1"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.availablerooms, function (room) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+          key: room.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.number), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rs " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.price) + "/=", 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          "class": "btn btn-success",
+          "data-toggle": "modal",
+          "data-target": "#BookingModal",
+          style: {
+            "margin-right": "4px",
+            "background-color": "white"
+          },
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.getRoom(room);
+          }, ["prevent"])
+        }, _hoisted_13, 8
+        /* PROPS */
+        , _hoisted_11)])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal add booking "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+        "class": "modal-dialog modal-dialog-centered",
+        role: "document",
+        onClose: _cache[5] || (_cache[5] = function () {
+          return _ctx.closeModal && _ctx.closeModal.apply(_ctx, arguments);
+        })
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+        onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return $options.submit && $options.submit.apply($options, arguments);
+        }, ["prevent"]))
+      }, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "name",
+        modelValue: $data.addBookingform.name,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+          return $data.addBookingform.name = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "Customer Name",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "noOfMembers",
+        modelValue: $data.addBookingform.noOfMembers,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+          return $data.addBookingform.noOfMembers = $event;
+        }),
+        type: "number",
+        "class": "form-control form-control-user",
+        placeholder: "Number Of Member",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "mobile",
+        modelValue: $data.addBookingform.mobile,
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $data.addBookingform.mobile = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "Mobile",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_JetInput, {
+        id: "nic",
+        modelValue: $data.addBookingform.nic,
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+          return $data.addBookingform.nic = $event;
+        }),
+        type: "text",
+        "class": "form-control form-control-user",
+        placeholder: "NIC",
+        required: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>{{rm}}</p> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["btn btn-primary", {
+          'opacity-25': $data.addBookingform.processing
+        }]),
+        disabled: $data.addBookingform.processing
+      }, "Save", 10
+      /* CLASS, PROPS */
+      , _hoisted_26)])], 32
+      /* HYDRATE_EVENTS */
+      )])], 32
+      /* HYDRATE_EVENTS */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /Modal add booking ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu1 end"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.bookedrooms, function (room) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+          key: room.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.number), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rs " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.price) + "/=", 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.customer), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(room.createddate), 1
+        /* TEXT */
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          "class": "btn btn-success",
+          style: {
+            "margin-right": "4px",
+            "background-color": "white"
+          },
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.moveToUse(room.id);
+          }, ["prevent"])
+        }, _hoisted_33, 8
+        /* PROPS */
+        , _hoisted_31), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          "class": "btn btn-danger",
+          style: {
+            "background-color": "white"
+          },
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.removeBooking(room.id);
+          }, ["prevent"])
+        }, _hoisted_36, 8
+        /* PROPS */
+        , _hoisted_34)])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("menu2 end")])])];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67 ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return null;
 }
 
 /***/ }),
@@ -26889,7 +27913,7 @@ var _hoisted_2 = {
   "class": "container d-flex justify-content-center"
 };
 var _hoisted_3 = {
-  "class": "cards p-3 py-4"
+  "class": "cards p-3 py-4 cards_cus"
 };
 var _hoisted_4 = {
   "class": "text-center"
@@ -27894,6 +28918,54 @@ if ($defineProperty) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.cards_custom {\r\n    color: rgb(8, 8, 8);\r\n    max-width: 1250px;\r\n    min-height: 530px;\r\n    border-radius: 10px;\r\n    background: linear-gradient(145deg, #ffffff, #ececec);\r\n    box-shadow: 20px 20px 60px #ffffff00;\r\n    margin: 0px 10px 0px 20px;\n}\r\n  ", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.cards_custom {\r\n  color: rgb(8, 8, 8);\r\n  max-width: 1250px;\r\n  min-height: 530px;\r\n  border-radius: 10px;\r\n  background: linear-gradient(145deg, #ffffff, #ececec);\r\n  box-shadow: 20px 20px 60px #ffffff00;\r\n  margin: 0px 10px 0px 20px;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Home/Index.vue?vue&type=style&index=0&id=f311f62a&scoped=true&lang=css":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Home/Index.vue?vue&type=style&index=0&id=f311f62a&scoped=true&lang=css ***!
@@ -27936,7 +29008,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Noto Sans\", sans-serif;\n}\nhtml,\r\nbody {\r\n  height: 100%;\n}\n.cards {\r\n  color: rgb(8, 8, 8);\r\n  width: 1200px;\r\n  height: 600px;\r\n  border-radius: 10px;\r\n  background: linear-gradient(145deg, #f3ecf2, #0505054b);\r\n  box-shadow: 20px 20px 60px #0000004d;\r\n  border: none;\n}\n.neo-button {\r\n  width: 50px;\r\n  height: 50px;\r\n  outline: 0 !important;\r\n  cursor: pointer;\r\n  color: #fff;\r\n  font-size: 20px;\r\n  border: none;\r\n  margin-right: 10px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(145deg, #f7f7f700, #f7f7f7);\r\n  box-shadow: inset 20px 20px 60px #f5f5f500, inset -20px -20px 60px #efeef000;\n}\n.num {\r\n  color: rgb(3, 3, 3) !important;\n}\n.line {\r\n  color: #fff;\n}\n.neo-button:active {\r\n  border-radius: 50%;\r\n  background: #ffffff;\r\n  box-shadow: 1px 1px 57px #ffffff80;\n}\n.fa-facebook {\r\n  color: #3b5998;\n}\n.fa-linkedin {\r\n  color: #0077b5;\n}\n.fa-google {\r\n  color: #dc4e41;\n}\n.fa-youtube {\r\n  color: #cd201f;\n}\n.fa-twitter {\r\n  color: #55acee;\n}\n.profile_button {\r\n  color: rgb(255, 255, 255);\r\n  padding: 10px;\r\n  border: none;\r\n  outline: 0 !important;\r\n  border-radius: 50px;\r\n  background: #732d8d;\n}\n.profile_button:active {\r\n  background: #521768;\r\n  box-shadow: 1px 1px 57px #52176886;\n}\r\n\r\n/* img,\r\nvideo {\r\n  max-width: 100%;\r\n  height: 95px;\r\n} */\n.img_custom {\r\n  max-width: 100%;\r\n  height: 95px;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\n}\n.inf {\r\n  color: rgb(0, 0, 0);\r\n  padding: 10px;\r\n  border: none;\r\n  outline: 0 !important;\r\n  border-radius: 50px;\r\n  background: #03030331;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Noto Sans\", sans-serif;\n}\nhtml,\r\nbody {\r\n  height: 100%;\n}\n.cards_cus {\r\n  color: rgb(8, 8, 8);\r\n  width: 1200px;\r\n  height: 600px;\r\n  border-radius: 10px;\r\n  background: linear-gradient(145deg, #f3ecf2, #0505054b);\r\n  box-shadow: 20px 20px 60px #0000004d;\r\n  border: none;\n}\n.neo-button {\r\n  width: 50px;\r\n  height: 50px;\r\n  outline: 0 !important;\r\n  cursor: pointer;\r\n  color: #fff;\r\n  font-size: 20px;\r\n  border: none;\r\n  margin-right: 10px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(145deg, #f7f7f700, #f7f7f7);\r\n  box-shadow: inset 20px 20px 60px #f5f5f500, inset -20px -20px 60px #efeef000;\n}\n.num {\r\n  color: rgb(3, 3, 3) !important;\n}\n.line {\r\n  color: #fff;\n}\n.neo-button:active {\r\n  border-radius: 50%;\r\n  background: #ffffff;\r\n  box-shadow: 1px 1px 57px #ffffff80;\n}\n.fa-facebook {\r\n  color: #3b5998;\n}\n.fa-linkedin {\r\n  color: #0077b5;\n}\n.fa-google {\r\n  color: #dc4e41;\n}\n.fa-youtube {\r\n  color: #cd201f;\n}\n.fa-twitter {\r\n  color: #55acee;\n}\n.profile_button {\r\n  color: rgb(255, 255, 255);\r\n  padding: 10px;\r\n  border: none;\r\n  outline: 0 !important;\r\n  border-radius: 50px;\r\n  background: #732d8d;\n}\n.profile_button:active {\r\n  background: #521768;\r\n  box-shadow: 1px 1px 57px #52176886;\n}\r\n\r\n/* img,\r\nvideo {\r\n  max-width: 100%;\r\n  height: 95px;\r\n} */\n.img_custom {\r\n  max-width: 100%;\r\n  height: 95px;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\n}\n.inf {\r\n  color: rgb(0, 0, 0);\r\n  padding: 10px;\r\n  border: none;\r\n  outline: 0 !important;\r\n  border-radius: 50px;\r\n  background: #4e077a47;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -51805,6 +52877,66 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_style_index_0_id_65c5b0d0_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_style_index_0_id_65c5b0d0_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_style_index_0_id_65c5b0d0_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_style_index_0_id_6a454d40_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_style_index_0_id_6a454d40_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_style_index_0_id_6a454d40_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Home/Index.vue?vue&type=style&index=0&id=f311f62a&scoped=true&lang=css":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Home/Index.vue?vue&type=style&index=0&id=f311f62a&scoped=true&lang=css ***!
@@ -57285,6 +58417,96 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/AssignRooms.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AssignRooms_vue_vue_type_template_id_65c5b0d0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AssignRooms.vue?vue&type=template&id=65c5b0d0 */ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0");
+/* harmony import */ var _AssignRooms_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AssignRooms.vue?vue&type=script&lang=js */ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js");
+/* harmony import */ var _AssignRooms_vue_vue_type_style_index_0_id_65c5b0d0_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css */ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css");
+/* harmony import */ var D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_AssignRooms_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AssignRooms_vue_vue_type_template_id_65c5b0d0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Partials/AssignRooms.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Booking.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Booking.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Booking_vue_vue_type_template_id_6a454d40__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Booking.vue?vue&type=template&id=6a454d40 */ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40");
+/* harmony import */ var _Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Booking.vue?vue&type=script&lang=js */ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js");
+/* harmony import */ var _Booking_vue_vue_type_style_index_0_id_6a454d40_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css */ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css");
+/* harmony import */ var D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Booking_vue_vue_type_template_id_6a454d40__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Partials/Booking.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Customer.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Customer.vue ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Customer_vue_vue_type_template_id_57fdfe67__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Customer.vue?vue&type=template&id=57fdfe67 */ "./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67");
+/* harmony import */ var _Customer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Customer.vue?vue&type=script&lang=js */ "./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js");
+/* harmony import */ var D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,D_Projects_laravel_template_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Customer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Customer_vue_vue_type_template_id_57fdfe67__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Partials/Customer.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue":
 /*!***********************************************************************!*\
   !*** ./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue ***!
@@ -58151,6 +59373,54 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AssignRooms.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Customer.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************!*\
   !*** ./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=script&lang=js ***!
@@ -58919,6 +60189,54 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0 ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_template_id_65c5b0d0__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_template_id_65c5b0d0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AssignRooms.vue?vue&type=template&id=65c5b0d0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=template&id=65c5b0d0");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40 ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_template_id_6a454d40__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_template_id_6a454d40__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=template&id=6a454d40 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=template&id=6a454d40");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67 ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_template_id_57fdfe67__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_template_id_57fdfe67__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Customer.vue?vue&type=template&id=57fdfe67 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Customer.vue?vue&type=template&id=57fdfe67");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=template&id=1911682d":
 /*!*****************************************************************************************************!*\
   !*** ./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue?vue&type=template&id=1911682d ***!
@@ -59123,6 +60441,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TermsOfService_vue_vue_type_template_id_63d45180__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TermsOfService_vue_vue_type_template_id_63d45180__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TermsOfService.vue?vue&type=template&id=63d45180 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/TermsOfService.vue?vue&type=template&id=63d45180");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AssignRooms_vue_vue_type_style_index_0_id_65c5b0d0_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/AssignRooms.vue?vue&type=style&index=0&id=65c5b0d0&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_style_index_0_id_6a454d40_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Partials/Booking.vue?vue&type=style&index=0&id=6a454d40&lang=css");
 
 
 /***/ }),
@@ -59404,6 +60748,9 @@ var map = {
 	"./Auth/TwoFactorChallenge.vue": "./resources/js/Pages/Auth/TwoFactorChallenge.vue",
 	"./Auth/VerifyEmail.vue": "./resources/js/Pages/Auth/VerifyEmail.vue",
 	"./Dashboard/Index.vue": "./resources/js/Pages/Dashboard/Index.vue",
+	"./Dashboard/Partials/AssignRooms.vue": "./resources/js/Pages/Dashboard/Partials/AssignRooms.vue",
+	"./Dashboard/Partials/Booking.vue": "./resources/js/Pages/Dashboard/Partials/Booking.vue",
+	"./Dashboard/Partials/Customer.vue": "./resources/js/Pages/Dashboard/Partials/Customer.vue",
 	"./Dashboard/Partials/Modal/RoomEditModal.vue": "./resources/js/Pages/Dashboard/Partials/Modal/RoomEditModal.vue",
 	"./Dashboard/Partials/Modal/RoomModal.vue": "./resources/js/Pages/Dashboard/Partials/Modal/RoomModal.vue",
 	"./Dashboard/Partials/Rooms.vue": "./resources/js/Pages/Dashboard/Partials/Rooms.vue",

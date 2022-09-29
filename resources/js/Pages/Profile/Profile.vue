@@ -6,7 +6,7 @@
     </template>
 
     <div class="container d-flex justify-content-center">
-      <div class="cards p-3 py-4">
+      <div class="cards p-3 py-4 cards_cus ">
         <div class="text-center">
           <img
             src="https://www.man-shop.eu/media/image/19/07/c7/HerrenBz6datKT7kMmG.png"
@@ -84,7 +84,7 @@ body {
   height: 100%;
 }
 
-.cards {
+.cards_cus {
   color: rgb(8, 8, 8);
   width: 1200px;
   height: 600px;
@@ -176,6 +176,6 @@ video {
   border: none;
   outline: 0 !important;
   border-radius: 50px;
-  background: #03030331;
+  background: #4e077a47;
 }
 </style>

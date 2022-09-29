@@ -20,6 +20,7 @@ class RoomController extends Controller
         //
         $data = Room::all();
         return Inertia::render('Dashboard/Partials/Rooms', ['rooms' => $data]);
+        
     }
 
     /**
@@ -52,6 +53,8 @@ class RoomController extends Controller
                     $room = new Room();
                     $room->number = $request->number;
                     $room->price = $request->price;
+                    $room->isuse = false;
+                    $room->isbook = false;
                     $room->save();
 
                     DB::commit();

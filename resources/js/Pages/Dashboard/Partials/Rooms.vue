@@ -199,6 +199,13 @@ export default {
   },
   mounted() {
     let self = this;
+
+    $(document).ready(function() {
+      var table = $("#dataTable").DataTable({
+        ajax: this.rooms
+      });
+      table.ajax.reload();
+    });
   },
 
   methods: {
@@ -245,7 +252,7 @@ export default {
         Swal.fire({
           position: "top-scroll-to-top",
           icon: "error",
-          title: "error while editing",
+          title: "error while deleting",
           showConfirmButton: false,
           timer: 1500
         });
